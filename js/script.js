@@ -68,7 +68,8 @@ function userLogin() {
     for (var i = 0; i < usersAccounts.length; i++) {
         if (loginEmailInput.value == usersAccounts[i].userEmail && loginPasswordInput.value == usersAccounts[i].userPassword) {
             localStorage.setItem('usersName', JSON.stringify(usersAccounts[i].userName))
-            window.location.assign('Smart-login/home.html')
+            // window.location.assign('../home.html')
+            document.getElementById('link').setAttribute('href', 'home.html')
         } else if (loginEmailInput.value == '' && loginPasswordInput.value == '') {
             document.getElementById('incorrect').classList.add('d-none');
             document.getElementById('empty').classList.remove('d-none');
