@@ -80,7 +80,7 @@ function userLogin() {
     }
 }
 function validEmail(email) {
-    var regex = /^[a-z-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+    var regex = /^[a-z-0-9\.]+@([\w-]+\.)+[\w-]{2,4}$/;
     if (regex.test(email)) {
         return true
     } else {
