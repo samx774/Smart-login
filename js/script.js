@@ -81,11 +81,15 @@ function userLogin() {
             // Store the user's name in local storage and redirect to home.html
             localStorage.setItem('usersName', JSON.stringify(usersAccounts[i].userName));
             document.getElementById('link').setAttribute('href', 'home.html');
-        } else if (loginEmailInput.value == '' && loginPasswordInput.value == '') {
+            return
+        } 
+
+
+        if (loginEmailInput.value == '' && loginPasswordInput.value == '') {
             // Display an error message for empty login credentials
             document.getElementById('incorrect').classList.add('d-none');
             document.getElementById('empty').classList.remove('d-none');
-        } else {
+        } else{
             // Display an error message for incorrect login credentials
             document.getElementById('empty').classList.add('d-none');
             document.getElementById('incorrect').classList.remove('d-none');
