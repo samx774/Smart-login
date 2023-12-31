@@ -85,7 +85,7 @@ function userLogin() {
         } 
 
 
-        if (loginEmailInput.value == '' && loginPasswordInput.value == '') {
+         if (loginEmailInput.value == '' || loginPasswordInput.value == '') {
             // Display an error message for empty login credentials
             document.getElementById('incorrect').classList.add('d-none');
             document.getElementById('empty').classList.remove('d-none');
@@ -103,8 +103,11 @@ function validEmail(email) {
     return regex.test(email);
 }
 
-// Display the welcome message with the user's name
-welcomeUser.innerHTML = 'Welcome ' + JSON.parse(localStorage.getItem('usersName'));
-
-// Attach the emailExist function to the signup button click event
-signup.addEventListener('click', emailExist);
+if(welcomeUser != null){    
+    // Display the welcome message with the user's name
+    welcomeUser.innerHTML = 'Welcome ' + JSON.parse(localStorage.getItem('usersName'));
+}
+if(signup != null){
+    // Attach the emailExist function to the signup button click event
+    signup.addEventListener('click', emailExist);
+}
